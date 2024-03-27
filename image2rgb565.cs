@@ -34,7 +34,7 @@ class Program
 				}
 				s += string.Format("0x{0:X4}", rgb565);
 			}
-			s += "\n";
+			s += ",\n";
 		}
 		System.Console.WriteLine("unsigned int width = " + bitmap.Width + ";");
 		System.Console.WriteLine("unsigned int height = " + bitmap.Height + ";");
