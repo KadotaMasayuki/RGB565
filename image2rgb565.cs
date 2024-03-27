@@ -1,8 +1,6 @@
 /*
  output RGB565 format as csv from image file.
-
- create
-   2024/03/26 kadota
+ 2024/03/26 kadota
  environment
    Windows 11 22H2
  build
@@ -23,6 +21,10 @@ class Program
 		System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(arg[0]);
 		string s = "";
 		for (int y = 0; y < bitmap.Height; y ++) {
+			if (s != "") {
+				s += ",\n";
+			}
+			s += "    ";
 			for (int x = 0; x < bitmap.Width; x ++) {
 				System.Drawing.Color pixel = bitmap.GetPixel(x, y);
 				uint r = pixel.R;
@@ -34,13 +36,11 @@ class Program
 				}
 				s += string.Format("0x{0:X4}", rgb565);
 			}
-			s += ",\n";
 		}
 		System.Console.WriteLine("unsigned int width = " + bitmap.Width + ";");
 		System.Console.WriteLine("unsigned int height = " + bitmap.Height + ";");
 		System.Console.WriteLine("unsigned int rgb565[" + bitmap.Width * bitmap.Height + "] = {");
-        System.Console.WriteLine(s);
-		System.Console.WriteLine("};");
+        System.Console.WriteLine(s + "\n};");
 		return 0;
     }
 }
