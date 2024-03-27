@@ -9,7 +9,10 @@ i needs convet image to c++ array as
 ```
 unsigned int w = 2;
 unsigned int h = 2;
-unsigned int rgb565[4] { 0xffff, 0xfe88, 0xfe88, 0x0088 };
+unsigned int rgb565[4] {
+  0xffff, 0xfe88,
+  0xfe88, 0x0088
+ };
 ```
 
 ## why c#
