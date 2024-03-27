@@ -2,17 +2,27 @@
 
 ## image2rgb565.cs
 
-im using M5Stack, i need rgb565 image as c++ array(as text).
-now my environment i can't use python or c++ libpng or etc...
-but fortunately, my pc is windows 11. already installed c# compiler and DotNetFramework library.
-then i write program to convert image file to rgb565 formatted c++ array.
+M5Stack Core2 understand RGB565 color.
 
---
+i needs convet image to c++ array as
 
- build
+```
+unsigned int w = 2;
+unsigned int h = 2;
+unsigned int rgb565[4] { 0xffff, 0xfe88, 0xfe88, 0x0088 };
+```
+
+## why c#
+
+i can't use python or c++ libpng or etc...
+but fortunately, my pc windows 11 already installed c# compiler csc.exe and have DotNetFramework library.
+then i can write c# program to convert image file to rgb565 formatted c++ array.
+
+## build
  
-   c:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe image2rgb565.cs
+c:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe  image2rgb565.cs
 
- usage
+## usage
  
-   image2rgb565.exe some_image_file > output.txt
+   image2rgb565.exe  some_image_file  >  output.txt
+
